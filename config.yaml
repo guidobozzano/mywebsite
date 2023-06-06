@@ -20,8 +20,8 @@ params:
         title: Address
     buttonClear: Clear
     buttonSend: Send message
-    email: gbozzano.mba2024@london.edu
-      - email: example@domain.com
+    email: 
+      - email: gbozzano.mba2024@london.edu
         title: Email
     enable: yes
     phone:
@@ -81,10 +81,10 @@ params:
   tiles:
     enable: yes
     showcase:
-      - image: pic01.jpg
+      - image: lbs.jpg
         subtitle: Ipsum Dolor Sit Amet
         title: Aliquam
-        url: blogs/aliquam
+        url: blogs/risk_return
       - image: pic02.jpg
         subtitle: Feugiat Amet Tempus
         title: Tempus
