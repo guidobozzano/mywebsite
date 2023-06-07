@@ -14,36 +14,10 @@ title: Risk-Return of DJIA stocks
   
 
 
-```{r, setup, echo=FALSE}
-knitr::opts_chunk$set(
-  message = FALSE, 
-  warning = FALSE, 
-  tidy=FALSE,     # display code as typed
-  size="small")   # slightly smaller font for code
-options(digits = 3)
-
-# default figure size
-knitr::opts_chunk$set(
-  fig.width=6.75, 
-  fig.height=6.75,
-  fig.align = "center"
-)
-```
 
 
-```{r load-libraries, warning=FALSE, message=FALSE, echo=FALSE}
-library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
-library(lubridate)
-library(here)
-library(skimr)
-library(janitor)
-library(vroom)
-library(tidyquant)
-library(rvest)    # scrape websites
-library(purrr)  
-library(lubridate) #to handle dates
-library(ggrepel)
-```
+
+
 
 
 # Returns of financial stocks
@@ -52,8 +26,8 @@ Next, let's choose the [Dow Jones Industrial Average (DJIA)](https://en.wikipedi
 
 We will use the `rvest` package to scrape the Wikipedia page for the constituents of DJIA
 
-```{r, tickers_from_wikipedia}
 
+```r
 djia_url <- "https://en.wikipedia.org/wiki/Dow_Jones_Industrial_Average"
 
 
@@ -89,13 +63,13 @@ tickers <- table1 %>%
   select(ticker) %>% 
   pull() %>% # pull() gets them as a sting of characters
   c("SPY", "^VIX") # and lets us add SPY, the SP500 ETF, and the VIX index
-
 ```
 
 
 
 
-```{r get_price_data, message=FALSE, warning=FALSE, cache=TRUE}
+
+```r
 # Notice the cache=TRUE argument in the chunk options. Because getting data is time consuming, # cache=TRUE means that once it downloads data, the chunk will not run again next time you knit your Rmd
 
 myStocks <- tickers %>% 
@@ -106,10 +80,25 @@ myStocks <- tickers %>%
 glimpse(myStocks) # examine the structure of the resulting data frame
 ```
 
+```
+## Rows: 180,809
+## Columns: 8
+## Groups: symbol [32]
+## $ symbol   <chr> "MMM", "MMM", "MMM", "MMM", "MMM", "MMM", "MMM", "MMM", "MMM"…
+## $ date     <date> 2000-01-03, 2000-01-04, 2000-01-05, 2000-01-06, 2000-01-07, …
+## $ open     <dbl> 48.0, 46.4, 45.6, 47.2, 50.6, 50.2, 50.4, 51.0, 50.7, 50.4, 4…
+## $ high     <dbl> 48.2, 47.4, 48.1, 51.2, 51.9, 51.8, 51.2, 51.8, 50.9, 50.5, 4…
+## $ low      <dbl> 47.0, 45.3, 45.6, 47.2, 50.0, 50.0, 50.2, 50.4, 50.2, 49.5, 4…
+## $ close    <dbl> 47.2, 45.3, 46.6, 50.4, 51.4, 51.1, 50.2, 50.4, 50.4, 49.7, 4…
+## $ volume   <dbl> 2173400, 2713800, 3699400, 5975800, 4101200, 3863800, 2357600…
+## $ adjusted <dbl> 25.1, 24.1, 24.8, 26.8, 27.4, 27.2, 26.8, 26.8, 26.8, 26.5, 2…
+```
+
 Financial performance analysis depend on returns; If I buy a stock today for 100 and I sell it tomorrow for 101.75, my one-day return, assuming no transaction costs, is 1.75%. So given the adjusted closing prices, our first step is to calculate daily and monthly returns.
 
 
-```{r calculate_returns, message=FALSE, warning=FALSE, cache=TRUE}
+
+```r
 #calculate daily returns
 myStocks_returns_daily <- myStocks %>%
   tq_transmute(select     = adjusted, 
@@ -129,7 +118,8 @@ myStocks_returns_monthly <- myStocks %>%
                cols = c(nested.col)) 
 ```
 
-```{r}
+
+```r
 #visualise monthly returns since 2010, for each of the 30 DJIA stocks
 myStocks_returns_monthly %>% 
   filter(symbol != "^VIX", symbol != "SPY") %>% 
@@ -147,44 +137,9 @@ myStocks_returns_monthly %>%
     x = "Monthly returns (%)",
     y = "" )+
   NULL
-
-
 ```
 
+<img src="/blogs/risk_return_files/figure-html/unnamed-chunk-1-1.png" width="648" style="display: block; margin: auto;" />
 
-```{r, risk_return, echo=FALSE}
 
-by_year_monthly <- myStocks_returns_monthly %>% 
-  mutate(year = year(date),
-         month=month(date),
-         month_name = month(date, label=TRUE)
-  )
-
-cols <- c("grey10","tomato")
-
-  
-by_year_monthly %>% 
-  group_by(year,symbol) %>% 
-  filter(year>=2017) %>% 
-  filter(symbol != "^VIX") %>% 
-  summarise(mean_return = mean(monthly_returns, na.rm=TRUE),
-            sd_return = sd(monthly_returns, na.rm=TRUE),
-            ) %>% 
-  mutate(sp500 = ifelse(symbol == "SPY", TRUE, FALSE)) %>% 
-  
-  ggplot(aes(x=sd_return, y = mean_return))+
-  geom_point(aes(color = sp500))+
-  geom_text_repel(aes(label = symbol, color = sp500), size = 3)+
-  theme_bw()+
-  scale_colour_manual(values = cols)+
-  facet_wrap(~year,nrow = 5)+
-  theme(legend.position = "none")+
-  scale_y_continuous(labels = scales::percent) +
-  labs(
-    title = "Risk-Return tradeoff for DJIA stocks",
-    subtitle = "Monthly returns, Jan 2017- now",
-    x = "Risk (SD of monthly returns)",
-    y = "Return (Mean)" )+
-  NULL
-
-```
+<img src="/blogs/risk_return_files/figure-html/risk_return-1.png" width="648" style="display: block; margin: auto;" />
