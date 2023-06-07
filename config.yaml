@@ -8,15 +8,15 @@ params:
   banner:
     buttonText: Get Started
     subtitle: |-
-      #A RESPONSIVE SITE TEMPLATE DESIGNED BY HTML5 UP
-      #AND RELEASED UNDER THE CREATIVE COMMONS.
-    title: Hi, my name is Guido. I'm originally from Argentina but living in London
+      This portfolio displays R data analysis
+      
+    title: Guido Bozzano, MBA Candidate 2024 @ LBS
   blog: {}
   contact:
     address:
-      - city: City, ST 00000
-        country: Country
-        street: Street
+      - city: London
+        country: England, United Kingdom
+        street: Sussex Place
         title: Address
     buttonClear: Clear
     buttonSend: Send message
@@ -25,8 +25,8 @@ params:
         title: Email
     enable: yes
     phone:
-      - phone: (+44) 7938-689511 x1234
-        title: Phone
+      - phone: (+44) 7938 689511
+        title: Mobile Phone
   custom_css: []
   custom_js: []
   description: Your description
@@ -51,12 +51,12 @@ params:
       - icon: #fa-instagram
         label: #Instagram
         url: #https://www.instagram.com
-      - icon: #fa-github
-        label: #GitHub
-        url: #https://www.github.com
-      - icon: #fa-linkedin
-        label: #LinkedIn
-        url: #https://www.linkedin.com
+      - icon: fa-github
+        label: GitHub
+        url: https://github.com/guidobozzano/
+      - icon: fa-linkedin
+        label: LinkedIn
+        url: https://www.linkedin.com/in/guidobozzano/
   image: ''
   name: Your name
   navigation:
