@@ -168,4 +168,4 @@ ggplot(data = argentina_data, aes(x = energy_per_capita, y = GDPpercap)) +
 
 ```
 
-The information displayed above
+The information above displays what type of energy Argentina uses per year, how do C02 per capita and Electricity usage per capita compare vs GDP per capita

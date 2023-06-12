@@ -95,7 +95,7 @@ ggplot(argentina_long, aes(x = year, y = generation, fill = source)) +
   scale_fill_discrete()
 ```
 
-<img src="/energy_arg_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+<img src="/blogs/energy_arg_files/figure-html/unnamed-chunk-3-1.png" width="672" />
 
 
 ```r
@@ -120,7 +120,7 @@ ggplot(data = argentina_data, aes(x = GDPpercap, y = co2percap)) +
   theme_economist()
 ```
 
-<img src="/energy_arg_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+<img src="/blogs/energy_arg_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 
 
 ```r
@@ -146,6 +146,6 @@ ggplot(data = argentina_data, aes(x = energy_per_capita, y = GDPpercap)) +
   theme_economist()
 ```
 
-<img src="/energy_arg_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+<img src="/blogs/energy_arg_files/figure-html/unnamed-chunk-5-1.png" width="672" />
 
-The information displayed above
+The information above displays what type of energy Argentina uses per year, how do C02 per capita and Electricity usage per capita compare vs GDP per capita

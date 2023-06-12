@@ -1,0 +1,87 @@
+---
+categories:  
+- ""    #the front matter should be like the one found in, e.g., blog2.md. It cannot be like the normal Rmd we used
+- ""
+date: "2021-09-30"
+description: COVID-19 analysis # the title that will show up once someone gets to this page
+draft: false
+image: spices.jpg # save picture in \static\img\blogs. Acceptable formats= jpg, jpeg, or png . Your iPhone pics wont work
+
+keywords: ""
+slug: cdc_covid # slug is the shorthand URL address... no spaces plz
+title: COVID-19 analysis
+---
+```{r}
+#| label: load-libraries
+#| echo: false # This option disables the printing of code (only output is displayed).
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(wbstats)
+library(tictoc)
+library(skimr)
+library(countrycode)
+library(here)
+library(DBI)
+library(dbplyr)
+library(arrow)
+library(rvest)
+library(robotstxt) # check if we're allowed to scrape the data
+library(scales)
+library(sf)
+library(readxl)
+library(repr)
+library(duckdb)
+library(janitor)
+library(gapminder)
+library(shiny)
+library(ggthemes)
+library(extrafont)
+library(viridis)
+library(RColorBrewer)
+library(cowplot)
+library(patchwork)
+library(purrr)
+library(ggplot2)
+```
+
+```{r, setup, echo=FALSE}
+knitr::opts_chunk$set(
+  message = FALSE, 
+  warning = FALSE, 
+  tidy=FALSE,     # display code as typed
+  size="small")   # slightly smaller font for code
+options(digits = 3)
+
+# default figure size
+knitr::opts_chunk$set(
+  fig.width=6.75, 
+  fig.height=6.75,
+  fig.align = "center"
+)
+```
+
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("/img/covid-CFR-ICU.jpg", error = FALSE)
+```
+
+This first graph
+
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("/img/cfr-county-population.jpg", error = FALSE)
+```
+
+The second one
+
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("/img/cfr-icu-overtime.jpg", error = FALSE)
+```
+
+The third 
+
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("/img/cfr-rural-urban.jpg", error = FALSE)
+```
+
+Last
