@@ -12,6 +12,27 @@ slug: card_fraud # slug is the shorthand URL address... no spaces plz
 title: Card fraud analysis
 ---
 
+```{r}
+#| label: load-libraries
+#| echo: false # This option disables the printing of code (only output is displayed).
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(wbstats)
+library(skimr)
+library(countrycode)
+library(here)
+library(ggthemes)
+library(extrafont)
+library(viridis)
+library(RColorBrewer)
+library(cowplot)
+library(patchwork)
+
+```
+
+
 # Exploring credit card fraud
 
 We will be using a dataset with credit card transactions containing legitimate and fraud transactions. Fraud is typically well below 1% of all transactions, so a naive model that predicts that all transactions are legitimate and not fraudulent would have an accuracy of well over 99%-- pretty good, no? (well, not quite as we will see later in the course)
@@ -65,6 +86,6 @@ chart <- ggplot(fraud_by_category, aes(x = reorder(category, -percentage), y = p
   scale_fill_manual(values = c("Top 4" = "orange", "Other" = "lightgrey")) +
   guides(fill = FALSE)
 
-print(chart)
+chart
 ```
 From this chart we can observe that the most common merchant categories for fraud are shopping_net, grocery_pos, misc_net and shopping_pos. Having said that, fraudulent transactions tend to happen more online and in shopping stores such as clothing or multi purpose shops for example. Also, there tend to be fraudulent transactions in grocery stores
