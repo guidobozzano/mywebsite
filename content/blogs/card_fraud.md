@@ -92,4 +92,8 @@ chart
 ```
 
 <img src="/blogs/card_fraud_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+
 From this chart we can observe that the most common merchant categories for fraud are shopping_net, grocery_pos, misc_net and shopping_pos. Having said that, fraudulent transactions tend to happen more online and in shopping stores such as clothing or multi purpose shops for example. Also, there tend to be fraudulent transactions in grocery stores
+
+
+
