@@ -95,7 +95,7 @@ params:
         url: blogs/card_fraud
       - image: pic04.jpg
         subtitle: Nisl Sed Aliquam
-        title: Energy usage by type in Argentina
+        title: Energy usage in Argentina
         url: blogs/energy_arg
       - image: pic05.jpg
         subtitle: Ipsum Dolor Sit Amet

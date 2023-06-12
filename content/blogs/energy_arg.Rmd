@@ -167,3 +167,5 @@ ggplot(data = argentina_data, aes(x = energy_per_capita, y = GDPpercap)) +
   theme_economist()
 
 ```
+
+The information displayed above
