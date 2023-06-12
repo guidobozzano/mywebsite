@@ -144,9 +144,4 @@ myStocks_returns_monthly %>%
 
 <img src="/blogs/risk_return_files/figure-html/risk_return-1.png" width="648" style="display: block; margin: auto;" />
 
-```r
-knitr::include_graphics("/img/return1.jpg",error=FALSE)
-```
-
-<img src="../../../../../../img/return1.jpg" style="display: block; margin: auto;" />
 

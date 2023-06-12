@@ -188,7 +188,5 @@ by_year_monthly %>%
   NULL
 
 ```
-```{r image_returns, message=FALSE, warning=FALSE, cache=TRUE}
-knitr::include_graphics("/img/return1.jpg",error=FALSE)
-```
+
 
