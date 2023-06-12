@@ -81,22 +81,22 @@ params:
   tiles:
     enable: yes
     showcase:
-      - image: lbs.jpg
+      - image: stock1.jpg
         subtitle: Risk return analysis and R code
         title: Risk Return of DJIA Stocks
         url: blogs/risk_return
-      - image: pic02.jpg
-        subtitle: Feugiat Amet Tempus
+      - image: mass1.jpg
+        subtitle: Data analysis of mass shootings in the US
         title: Mass shootings analysis
         url: blogs/mass_shootings
-      - image: pic03.jpg
-        subtitle: Lorem Etiam Nullam
+      - image: fraud1.jpg
+        subtitle: Data analysis of credit card fraud transactions
         title: Card fraud analysis
         url: blogs/card_fraud
       - image: pic04.jpg
         subtitle: Nisl Sed Aliquam
-        title: Ipsum
-        url: blogs/ipsum
+        title: Energy usage by type in Argentina
+        url: blogs/energy_arg
       - image: pic05.jpg
         subtitle: Ipsum Dolor Sit Amet
         title: Consequat
