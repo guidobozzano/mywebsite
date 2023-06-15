@@ -14,6 +14,7 @@ title: Energy usage by type in Argentina
 
 
 
+# Exploring energy usage by Country
 
 We will get energy data from the Our World in Data website, and CO2 and GDP per capita emissions from the World Bank, using the `wbstats`package.
 
