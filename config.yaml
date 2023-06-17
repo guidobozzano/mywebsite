@@ -42,15 +42,15 @@ params:
         text: 'Design: '
         url: https://www.html5up.net
     social:
-      - icon: #fa-twitter
-        label: #Twitter
-        url: #https://www.twitter.com
-      - icon: #fa-facebook
-        label: #Facebook
-        url: #https://www.facebook.com
-      - icon: #fa-instagram
-        label: #Instagram
-        url: #https://www.instagram.com
+#      - icon: #fa-twitter
+#        label: #Twitter
+#        url: #https://www.twitter.com
+#      - icon: #fa-facebook
+#        label: #Facebook
+#        url: #https://www.facebook.com
+#      - icon: #fa-instagram
+#        label: #Instagram
+#        url: #https://www.instagram.com
       - icon: fa-github
         label: GitHub
         url: https://github.com/guidobozzano/
@@ -63,9 +63,9 @@ params:
     button1:
       - name: Get Started
         url: blogs
-    button2:
-      - name: Log In
-        url: '#'
+#    button2:
+#      - name: Log In
+#        url: '#'
     links:
       - name: Home
         url: '#'
@@ -73,8 +73,8 @@ params:
         url: blogs
       - name: #Generic Blog
         url: #blogs/ipsum
-      - name: #Elements
-        url: #elements.html
+ #     - name: #Elements
+#        url: #elements.html
     menu: Menu
     subtitle: By HTML5 Up
     title: Forty
@@ -121,4 +121,4 @@ markup:
   goldmark: 
     renderer: 
       unsafe: true
-      
+
