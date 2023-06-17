@@ -2,10 +2,10 @@
 categories:  
 - ""    #the front matter should be like the one found in, e.g., blog2.md. It cannot be like the normal Rmd we used
 - ""
-date: "2021-09-30"
+date: "2023-06-15"
 description: Mass shootings analysis in USA # the title that will show up once someone gets to this page
 draft: false
-image: spices.jpg # save picture in \static\img\blogs. Acceptable formats= jpg, jpeg, or png . Your iPhone pics wont work
+image: mass1.jpg # save picture in \static\img\blogs. Acceptable formats= jpg, jpeg, or png . Your iPhone pics wont work
 
 keywords: ""
 slug: mass_shootings # slug is the shorthand URL address... no spaces plz
@@ -112,3 +112,6 @@ chart
 ```
 
 <img src="/blogs/mass_shootings_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+
+Based on the information from the charts, we can observe that if we analyze the number of mass shootings by race of the shooter we can see that the majority of them are carried out by caucasians. 
+Furthermore, if we carry out the same analysis by location we can observe that the majority of victims tend to be focused in Schools and Military areas

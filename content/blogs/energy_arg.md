@@ -2,10 +2,10 @@
 categories:  
 - ""    #the front matter should be like the one found in, e.g., blog2.md. It cannot be like the normal Rmd we used
 - ""
-date: "2021-09-30"
+date: "2023-06-15"
 description: Energy usage by type in Argentina # the title that will show up once someone gets to this page
 draft: false
-image: spices.jpg # save picture in \static\img\blogs. Acceptable formats= jpg, jpeg, or png . Your iPhone pics wont work
+image: energy1.jpg # save picture in \static\img\blogs. Acceptable formats= jpg, jpeg, or png . Your iPhone pics wont work
 
 keywords: ""
 slug: energy_arg # slug is the shorthand URL address... no spaces plz
@@ -149,4 +149,8 @@ ggplot(data = argentina_data, aes(x = energy_per_capita, y = GDPpercap)) +
 
 <img src="/blogs/energy_arg_files/figure-html/unnamed-chunk-5-1.png" width="672" />
 
-The information above displays what type of energy Argentina uses per year, how do C02 per capita and Electricity usage per capita compare vs GDP per capita
+The information above displays what type of energy Argentina uses per year, how do C02 per capita and Electricity usage per capita compare vs GDP per capita. 
+
+The last few years in Argentina have been quie interesting in terms of energy usage. On the one hand with the exploration of 'Vaca Muerta' the Gas and Oil usage has not only increased but also we have began exporting. On the other hand, we can see the beginning of other renewable energy.
+
+On the last graph we can see how Electricity usage has decreased as well as GDP per Capita. In essence this relates to the crisis the country has been going through in terms of fast currency depreciation, lower investments and lower GDP growth (+ the huge negative impact of COVID-19). This negative impacts have translated in an overall reduction in both GDP and Electricity usage since households are struggling to make ends meet and are unable to afford usage given the lower wages that are still prevalent in the country.
